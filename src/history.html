@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #commitList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .commit {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .commit:hover {
+            background-color: #e9e9e9;
+        }
+        #commitContent {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        #pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #pagination button {
+            margin: 0 5px;
+        }
+        .commit-actions {
+            margin-top: 10px;
+        }
+        .commit-actions button {
+            margin-right: 10px;
+        }
+
+        .commit-role {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .commit-content {
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        /* You might need to add some additional styles here to match ChatGPT's markdown styling */
+        .markdown code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversation History</h1>
+    <ul id="commitList"></ul>
+    <div id="pagination">
+        <button id="prevPage" disabled>Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage">Next</button>
+    </div>
+    <div id="commitContent"></div>
+    <div class="commit-actions">
+        <button id="revertBtn" disabled>Revert to This Commit</button>
+        <button id="newBranchBtn" disabled>Create New Branch from This Commit</button>
+    </div>
+    <script src="history.js"></script>
+</body>
+</html>
